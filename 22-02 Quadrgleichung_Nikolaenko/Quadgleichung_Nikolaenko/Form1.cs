@@ -22,8 +22,8 @@ namespace Quadgleichung_Nikolaenko
         private double d = 0;
 
         private void textBox_TextChanged(object sender, EventArgs e)
-         /* Diese Funktion verwaltet Zuweisung von Eingabenwerten in Textfeldern P und Q
-         * Konvertiert einen str-Wert eines Textfelds Text-Parameter in ein Double
+         /* Diese Funktion verwaltet Zuweisung von Eingabenwerten in Textfeldern P und Q;
+         * Konvertiert einen str-Wert eines Textfelds Text-Parameter in ein Double;
          * Weist den Souble-Wert dem entstpechenden Attribut der Klasse 
          */
         {
@@ -58,9 +58,9 @@ namespace Quadgleichung_Nikolaenko
         }
 
         private void button1_Click(object sender, EventArgs e)
-         /* Diese Funktion fordert mögliche X1 und X2-Lösungen für aktuelle Werte von Klassenattribute P und Q an
-         * Passt die Bedieneroberfläche der Anwendung entsprechend an, indem die Werte von X1 und X2 sowie 
-         * eine entsprechende Nachricht mit aktuellem D-Wert (nicht absolutem!) angezeigt werden
+         /* Diese Funktion fordert mögliche X1 und X2-Lösungen für aktuelle Werte von Klassenattribute P und Q an;
+         * Rechnet die Anzahl von möglichen Lösungen bei den aktuellen P und Q;
+         * Je nach Anzahl von Lösungen passt die Bedieneroberfläche der Anwendung entsprechend an, indem die ins str konvertierten Werte von X1 und X2 sowie eine entsprechende Nachricht mit dem D-Wert angezeigt werden
          */
         {
             double x1 = 0;
@@ -113,15 +113,13 @@ namespace Quadgleichung_Nikolaenko
 
         }
 
-        private double BerechnungVonD(double p, double q, ref double d)
+        private void BerechnungVonD(double p, double q, ref double d)
          /* Diese Funktion rechnet einen absoluten Wert von D der quadratischen Gleichung aus
          * args: p, q - Double-Werte von Klassenattributen mit aktuellen Werten von P und Q
-         *       d - Double-formattierte Klassenattribut für aktuellen D-Wert (Nicht absoluten!)
-         * return: Double-Wert für einen absoluten D
+         *       d - Double für aktuellen D-Wert (Nicht absoluten!)
          */
         {
             d = Math.Pow((p / 2), 2) - q;
-            return Math.Abs(d);
         }
 
         private int BerechnungVonX(double p, double q, ref double x1, ref double x2)
@@ -129,22 +127,23 @@ namespace Quadgleichung_Nikolaenko
          * Rechnet X1- bzw X1- und X2-Werte je nach aktuellen D-Wert aus
          * Gibt einen int-Wert für die Anzahl von möglichen Lösungen der quadratischen Gleichung zurück
          * args: p, q - Double-Werte von Klassenattributen mit aktuellen Werten von P und Q
+         *       x1, x2 - Double-Werte für die Lösungen der quadratischen Gleichung
          *       d - Double-formattierte Klassenattribut für aktuellen D-Wert (Nicht absoluten!)
          * return: int-Wert für die Anzahl von möglichen Lösungen
          */
         {
-            double d_abs = BerechnungVonD(p, q, ref d);
+            BerechnungVonD(p, q, ref d);
 
             if (d > 0)
             {
-                x1 = Math.Round(((-p / 2) + Math.Sqrt(d_abs)), 2);
-                x2 = Math.Round(((-p / 2) - Math.Sqrt(d_abs)), 2);
+                x1 = Math.Round(((-p / 2) + Math.Sqrt(d)), 2);
+                x2 = Math.Round(((-p / 2) - Math.Sqrt(d)), 2);
                 Console.WriteLine("2 solutions found: x1=" + x1 + " x2=" + x2);
                 return 2;
             }
             else if (d == 0)
             {
-                x1 = (-p / 2) + Math.Sqrt(d_abs);
+                x1 = (-p / 2) + Math.Sqrt(d);
                 Console.WriteLine("1 solution found: x1=" + x1);
                 return 1;
             }
