@@ -22,9 +22,9 @@ namespace Quadgleichung_Nikolaenko
         private double d = 0;
 
         private void textBox_TextChanged(object sender, EventArgs e)
-         /* Diese Funktion verwaltet Zuweisung von Eingabenwerten in Textfeldern P und Q;
-         * Konvertiert einen str-Wert eines Textfelds Text-Parameter in ein Double;
-         * Weist den Souble-Wert dem entstpechenden Attribut der Klasse 
+         /* Diese Funktion verwaltet Zuweisung von Eingabenwerten in Textfeldern P und Q den entsprechenden Klassenattributen;
+         * Konvertiert einen str-Wert eines Textfelds Text-Parameter ins double;
+         * Bei auftretenden Konvertierungsfehlern setzt den Text-Parameter eines Textfelds auf 0 zurück
          */
         {
             try
@@ -58,8 +58,8 @@ namespace Quadgleichung_Nikolaenko
         }
 
         private void button1_Click(object sender, EventArgs e)
-         /* Diese Funktion fordert mögliche X1 und X2-Lösungen für aktuelle Werte von Klassenattribute P und Q an;
-         * Rechnet die Anzahl von möglichen Lösungen bei den aktuellen P und Q;
+         /* Diese Funktion rechnet die Lösungen X1 und X2 bei den aktuellen Werten von P und Q aus;
+          * Bekommt eine aktuelle Anzahl von möglichen Lösungen der quadratischen Gleichung;
          * Je nach Anzahl von Lösungen passt die Bedieneroberfläche der Anwendung entsprechend an, indem die ins str konvertierten Werte von X1 und X2 sowie eine entsprechende Nachricht mit dem D-Wert angezeigt werden
          */
         {
@@ -123,9 +123,9 @@ namespace Quadgleichung_Nikolaenko
         }
 
         private int BerechnungVonX(double p, double q, ref double x1, ref double x2)
-        /* Fordert einen absoluten D-Wert an
-         * Rechnet X1- bzw X1- und X2-Werte je nach aktuellen D-Wert aus
-         * Gibt einen int-Wert für die Anzahl von möglichen Lösungen der quadratischen Gleichung zurück
+        /* Fordert einen D-Wert für aktuelle Werte von P und Q an;
+         * Rechnet X1-Wert bzw X1- und X2-Werte mit dem D-Wert aus;
+         * Gibt einen int-Wert für die Anzahl von möglichen Lösungen der quadratischen Gleichung zurück;
          * args: p, q - Double-Werte von Klassenattributen mit aktuellen Werten von P und Q
          *       x1, x2 - Double-Werte für die Lösungen der quadratischen Gleichung
          *       d - Double-formattierte Klassenattribut für aktuellen D-Wert (Nicht absoluten!)
