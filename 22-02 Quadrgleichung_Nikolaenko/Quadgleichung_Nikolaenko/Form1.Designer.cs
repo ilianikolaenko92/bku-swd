@@ -90,7 +90,7 @@
             this.groupBox1.Controls.Add(this.x1_textbox);
             this.groupBox1.Location = new System.Drawing.Point(222, 94);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(190, 143);
+            this.groupBox1.Size = new System.Drawing.Size(249, 143);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lösung";
@@ -183,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 261);
+            this.ClientSize = new System.Drawing.Size(500, 261);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);

@@ -21,39 +21,11 @@ namespace Quadgleichung_Nikolaenko
         private double q = 0;
         private double d = 0;
 
-
-        private double BerechnungVonD(double p, double q, ref double d)
-        {
-            d = Math.Pow((p / 2), 2) - q;
-            return Math.Abs(d);
-        }
-
-        private int BerechnungVonX(double p, double q, ref double x1, ref double x2)
-        {
-            double d_abs = BerechnungVonD(p, q, ref d);
-
-            if (d > 0)
-            {
-                x1 = Math.Round(((-p / 2) + Math.Sqrt(d_abs)), 2);
-                x2 = Math.Round(((-p / 2) - Math.Sqrt(d_abs)), 2);
-                Console.WriteLine("2 solutions found: x1=" + x1 + " x2=" + x2);
-                return 2;
-            }
-            else if (d == 0)
-            {
-                x1 = (-p / 2) + Math.Sqrt(d_abs);
-                Console.WriteLine("1 solution found: x1=" + x1);
-                return 1;
-            }
-            else
-            {
-                Console.WriteLine("No solution for current values of p and q");
-                return 0;
-            }
-
-        }
-
         private void textBox_TextChanged(object sender, EventArgs e)
+         /* Diese Funktion verwaltet Zuweisung von Eingabenwerten in Textfeldern P und Q
+         * Konvertiert einen str-Wert eines Textfelds Text-Parameter in ein Double
+         * Weist den Souble-Wert dem entstpechenden Attribut der Klasse 
+         */
         {
             try
             {
@@ -86,6 +58,10 @@ namespace Quadgleichung_Nikolaenko
         }
 
         private void button1_Click(object sender, EventArgs e)
+         /* Diese Funktion fordert mögliche X1 und X2-Lösungen für aktuelle Werte von Klassenattribute P und Q an
+         * Passt die Bedieneroberfläche der Anwendung entsprechend an, indem die Werte von X1 und X2 sowie 
+         * eine entsprechende Nachricht mit aktuellem D-Wert (nicht absolutem!) angezeigt werden
+         */
         {
             double x1 = 0;
             double x2 = 0;
@@ -127,13 +103,56 @@ namespace Quadgleichung_Nikolaenko
                     x2_textbox.Visible = false;
                     x2_label.Visible = false;
 
-                    solution_label.Text = $"D={d}, keine Lösungen möglich!";
+                    solution_label.Text = $"D={d}, keine Lösung möglich!";
                     solution_label.ForeColor = Color.Red;
                     solution_label.Visible = true;
                     break;
             }
 
             Console.WriteLine("D is " + d);
+
+        }
+
+        private double BerechnungVonD(double p, double q, ref double d)
+         /* Diese Funktion rechnet einen absoluten Wert von D der quadratischen Gleichung aus
+         * args: p, q - Double-Werte von Klassenattributen mit aktuellen Werten von P und Q
+         *       d - Double-formattierte Klassenattribut für aktuellen D-Wert (Nicht absoluten!)
+         * return: Double-Wert für einen absoluten D
+         */
+        {
+            d = Math.Pow((p / 2), 2) - q;
+            return Math.Abs(d);
+        }
+
+        private int BerechnungVonX(double p, double q, ref double x1, ref double x2)
+        /* Fordert einen absoluten D-Wert an
+         * Rechnet X1- bzw X1- und X2-Werte je nach aktuellen D-Wert aus
+         * Gibt einen int-Wert für die Anzahl von möglichen Lösungen der quadratischen Gleichung zurück
+         * args: p, q - Double-Werte von Klassenattributen mit aktuellen Werten von P und Q
+         *       d - Double-formattierte Klassenattribut für aktuellen D-Wert (Nicht absoluten!)
+         * return: int-Wert für die Anzahl von möglichen Lösungen
+         */
+        {
+            double d_abs = BerechnungVonD(p, q, ref d);
+
+            if (d > 0)
+            {
+                x1 = Math.Round(((-p / 2) + Math.Sqrt(d_abs)), 2);
+                x2 = Math.Round(((-p / 2) - Math.Sqrt(d_abs)), 2);
+                Console.WriteLine("2 solutions found: x1=" + x1 + " x2=" + x2);
+                return 2;
+            }
+            else if (d == 0)
+            {
+                x1 = (-p / 2) + Math.Sqrt(d_abs);
+                Console.WriteLine("1 solution found: x1=" + x1);
+                return 1;
+            }
+            else
+            {
+                Console.WriteLine("No solution for current values of p and q");
+                return 0;
+            }
 
         }
     }
