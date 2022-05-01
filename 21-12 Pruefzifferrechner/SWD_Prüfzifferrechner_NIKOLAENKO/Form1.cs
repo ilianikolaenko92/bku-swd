@@ -49,7 +49,7 @@ namespace SWD_Prüfzifferrechner_NIKOLAENKO
 
             // Hauptvariablen neu setzen
             card_nr_str = "";  // lert die Hauptvariable neu
-            Array.Clear(card_nrs_arr, 0, card_nrs_arr.Length);  // leert das Array von vorherigen Ergebnissen
+            Array.Clear(card_nrs_arr, 0, card_nrs_arr.Length);  // leert das Array von vorherigen Ergebnissen ab dem bestimmten Index bis den eingegebenen Inde
             security_nr_calculated = 0;  // setzt die kalkulierte Prüfziffer der letzten Eingabe neu
             security_nr_received = 0;  // setzt die erhaltene Prüfziffer der letzten Eingabe neu
 
@@ -81,7 +81,7 @@ namespace SWD_Prüfzifferrechner_NIKOLAENKO
 
                 // Erstellung und Befüllung von 2 Arrays für Zahlen aus geraden und ungeraden Indexen des Hauptarrays
                 int[] odd_nrs = new int[8];
-                int[] even_nrs = new int[8];
+                int[] even_nrs = new int[8];  
 
                 create_odds_and_evens_arrs(card_nrs_arr, ref odd_nrs, ref even_nrs);
 
@@ -96,8 +96,8 @@ namespace SWD_Prüfzifferrechner_NIKOLAENKO
                 even_result = get_evens_result(even_nrs, even_result);
 
                 // Ergebnisse und kalkulierte Prüfziffer
-                Console.WriteLine("Sum of odd indexes:" + odd_result);
-                Console.WriteLine("Sum of even indexes:" + even_result);
+                Console.WriteLine("Sum of odd indexes: " + odd_result);
+                Console.WriteLine("Sum of even indexes: " + even_result);
 
                 security_nr_calculated = calculate_security_nr(odd_result, even_result);
 
@@ -145,19 +145,18 @@ namespace SWD_Prüfzifferrechner_NIKOLAENKO
             int odds_index = 0;
             int evens_index = 0;
 
-            for (int i = 0; i < card_nrs_arr.Length; i++)
+            for (int i = 0; i < main_arr.Length - 1; i++)  // The last number (16th) is not used in the algorythm 
             {
-                int rest = i % 2;
 
-                if (rest == 0)
+                if (i % 2 == 0)  // modulo of 0 have ODD els of arrays! (idx0 is 1, idx2 is 3, idx 4 is 5, ...)
                 {
-                    odd_nrs[odds_index] = card_nrs_arr[i];
+                    odd_nrs[odds_index] = main_arr[i];
                     odds_index++;
                 }
 
                 else
                 {
-                    even_nrs[evens_index] = card_nrs_arr[i];
+                    even_nrs[evens_index] = main_arr[i];
                     evens_index++;
                 }
             }
@@ -188,7 +187,7 @@ namespace SWD_Prüfzifferrechner_NIKOLAENKO
                     int digit2 = (int)char.GetNumericValue(temp_str[1]);
 
                     final_int = digit1 + digit2;
-                    Console.WriteLine("For the number " + temp_str + "the sum of " + digit1 + " and " + digit2 + " is " + final_int);
+                    Console.WriteLine("For the number " + temp_str + "the quer sum of " + digit1 + " and " + digit2 + " is " + final_int);
                 }
 
                 else  // für 1-stellige Zahlen
