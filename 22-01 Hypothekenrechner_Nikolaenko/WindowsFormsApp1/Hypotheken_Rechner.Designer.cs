@@ -1,6 +1,6 @@
 ﻿namespace Hypothekenrechner_Nikolaenko
 {
-    partial class Form1
+    partial class Hypotheken_Rechner
     {
         /// <summary>
         /// Required designer variable.
@@ -160,7 +160,7 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Dauer der Hypotheke (Jahren)";
             // 
-            // Form1
+            // Hypotheken_Rechner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,8 +178,8 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Hypotheken_Rechner";
+            this.Text = "Hypotheke Rechner 2022";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Hypothekenrechner_Nikolaenko
 {
-    public partial class Form1 : Form
+    public partial class Hypotheken_Rechner : Form
     {
-        public Form1()
+        public Hypotheken_Rechner()
         {
             InitializeComponent();
         }
