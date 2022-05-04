@@ -16,7 +16,7 @@ namespace SWD_Prüfzifferrechner_NIKOLAENKO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Prüfziffer_Validierung());
         }
     }
 }

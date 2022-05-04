@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SWD_Prüfzifferrechner_NIKOLAENKO
 {
-    public partial class Form1 : Form
+    public partial class Prüfziffer_Validierung : Form
     {
         /*
         Main variables area
@@ -23,7 +23,7 @@ namespace SWD_Prüfzifferrechner_NIKOLAENKO
         private int security_nr_received = 0;
         private int security_nr_calculated = 0;
 
-        public Form1()
+        public Prüfziffer_Validierung()
         {
             InitializeComponent();
             validation_label1.Visible = false;

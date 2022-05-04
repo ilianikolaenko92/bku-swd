@@ -1,6 +1,6 @@
 ﻿namespace SWD_Prüfzifferrechner_NIKOLAENKO
 {
-    partial class Form1
+    partial class Prüfziffer_Validierung
     {
         /// <summary>
         /// Required designer variable.
@@ -106,7 +106,7 @@
             this.button2_calculate_security_nr.UseVisualStyleBackColor = true;
             this.button2_calculate_security_nr.Click += new System.EventHandler(this.button2_calculate_security_nr_Click);
             // 
-            // Form1
+            // Prüfziffer_Validierung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -114,8 +114,8 @@
             this.Controls.Add(this.button2_calculate_security_nr);
             this.Controls.Add(this.button1_check_cardnr);
             this.Controls.Add(this.groupBox1_card_data);
-            this.Name = "Form1";
-            this.Text = "Prüfziffer Validierung";
+            this.Name = "Prüfziffer_Validierung";
+            this.Text = "Luhn-Algorhytmus - Prüfziffer Validierung 2022";
             this.groupBox1_card_data.ResumeLayout(false);
             this.groupBox1_card_data.PerformLayout();
             this.ResumeLayout(false);
