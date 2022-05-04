@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Quadgleichung_Nikolaenko
 {
-    public partial class Form1 : Form
+    public partial class Quadratische_Gleichung : Form
     {
-        public Form1()
+        public Quadratische_Gleichung()
         {
             InitializeComponent();
         }

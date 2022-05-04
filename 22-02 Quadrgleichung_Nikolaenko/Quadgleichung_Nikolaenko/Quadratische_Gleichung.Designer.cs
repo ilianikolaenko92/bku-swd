@@ -1,6 +1,6 @@
 ﻿namespace Quadgleichung_Nikolaenko
 {
-    partial class Form1
+    partial class Quadratische_Gleichung
     {
         /// <summary>
         /// Required designer variable.
@@ -179,7 +179,7 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Parameter";
             // 
-            // Form1
+            // Quadratische_Gleichung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -187,7 +187,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "Quadratische_Gleichung";
             this.Text = "Quadratische Gleichung SWD";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
