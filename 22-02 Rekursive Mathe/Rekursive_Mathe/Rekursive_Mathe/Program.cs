@@ -16,7 +16,7 @@ namespace Rekursive_Mathe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Rekursive_Mathe());
         }
     }
 }

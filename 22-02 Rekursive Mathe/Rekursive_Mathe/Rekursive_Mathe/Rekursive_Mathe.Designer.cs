@@ -1,6 +1,6 @@
 ﻿namespace Rekursive_Mathe
 {
-    partial class Form1
+    partial class Rekursive_Mathe
     {
         /// <summary>
         /// Required designer variable.
@@ -144,7 +144,7 @@
             this.label6_y_message.Text = "null";
             this.label6_y_message.Visible = false;
             // 
-            // Form1
+            // Rekursive_Mathe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -160,8 +160,8 @@
             this.Controls.Add(this.comboBox_math_operations);
             this.Controls.Add(this.y_input);
             this.Controls.Add(this.x_input);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Rekursive_Mathe";
+            this.Text = "Rekursive Mathematik 2022";
             this.ResumeLayout(false);
             this.PerformLayout();
 

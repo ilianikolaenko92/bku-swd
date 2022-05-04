@@ -4,12 +4,12 @@ using System.Windows.Forms;
 
 namespace Rekursive_Mathe
 {
-    public partial class Form1 : Form
+    public partial class Rekursive_Mathe : Form
     {
         private int _selected_option = 0;
         private int _x_valid = 0;
         private int _y_valid = 0;
-        public Form1()
+        public Rekursive_Mathe()
         {
             InitializeComponent();
         }
