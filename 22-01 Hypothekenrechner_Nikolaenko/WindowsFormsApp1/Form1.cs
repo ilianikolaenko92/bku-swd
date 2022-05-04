@@ -32,10 +32,10 @@ namespace Hypothekenrechner_Nikolaenko
             while (counter <= loan_period_yrs)
             {
                 decimal current_debt = get_current_debt(ref loan_ttl_eur, interest_rate, yearly_payback_eur);
-                listView1.Items.Add($"Jahr {counter}: " + String.Format("{0:n}", current_debt));
+                listView1.Items.Add($"Jahr {counter}: " + String.Format("{0:n}", current_debt));  // Custom formatting of a string obj using .Format method of ICustomFormatter. See https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings and https://www.c-sharpcorner.com/UploadFile/mahesh/format-string-in-C-Sharp/. "{0:n}" adds a separator for thousands in numbers == {0:#,##0.00}
                 counter++;
             }
-            textBox4.Text = String.Format("{0:n}", loan_ttl_eur);  // .Format() method with "{0:n}" adds separater for thousands of numbers
+            textBox4.Text = String.Format("{0:n}", loan_ttl_eur);  // .Format() method with "{0:n}" adds a separator for thousands in numbers == {0:#,##0.00}
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace Hypothekenrechner_Nikolaenko
                 Console.WriteLine("Loan amount was set to" + loan_ttl_eur);
 
                 payback_ttl_eur = loan_ttl_eur;
-                textBox4.Text = String.Format("{0:n}", payback_ttl_eur);  // .Format() method with "{0:n}" adds separater for thousands of numbers
+                textBox4.Text = String.Format("{0:n}", payback_ttl_eur);  // .Format() method with "{0:n}" adds separator for thousands in numbers == {0:#,##0.00}
             }
             catch
             {
@@ -113,11 +113,11 @@ namespace Hypothekenrechner_Nikolaenko
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            string temp_val = textBox1.Text;
+            string temp_val = textBox1.Text;  // temp_val is used in case an exception is raised in TRY-section to retain the value of the field
 
             try
             {
-                textBox1.Text = string.Format("{0:#,##0.00}", double.Parse(textBox1.Text));  // Reformats the string of the input upon leaving the field. Found here https://stackoverflow.com/questions/15473216/how-to-format-a-windows-forms-textbox-with-thousand-separator-and-decimal-separt
+                textBox1.Text = string.Format("{0:#,##0.00}", double.Parse(textBox1.Text));  // Reformats the string of the input upon leaving the field. Found here https://stackoverflow.com/questions/15473216/how-to-format-a-windows-forms-textbox-with-thousand-separator-and-decimal-separt. We can replace {0:#,##0.00} with just {0:n} for separators of thousands in numbers
             }
     
             catch
@@ -129,11 +129,11 @@ namespace Hypothekenrechner_Nikolaenko
 
         private void textBox3_Leave(object sender, EventArgs e)
         {
-            string temp_val = textBox3.Text;
+            string temp_val = textBox3.Text;  // temp_val is used in case an exception is raised in TRY-section to retain the value of the field
 
             try
             {
-                textBox3.Text = string.Format("{0:#,##0.00}", double.Parse(textBox3.Text));  // Reformats the string of the input upon leaving the field. Found here https://stackoverflow.com/questions/15473216/how-to-format-a-windows-forms-textbox-with-thousand-separator-and-decimal-separt
+                textBox3.Text = string.Format("{0:#,##0.00}", double.Parse(textBox3.Text));  // Reformats the string of the input upon leaving the field. Found here https://stackoverflow.com/questions/15473216/how-to-format-a-windows-forms-textbox-with-thousand-separator-and-decimal-separt. We can replace {0:#,##0.00} with just {0:n} for separators of thousands in numbers
             }
 
             catch
