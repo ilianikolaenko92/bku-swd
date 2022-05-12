@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
@@ -58,6 +52,17 @@ namespace SWD_Klausur_220505_Nikolaenko
 
         }
 
+        private void button1_generate_Click(object sender, EventArgs e)
+        {
+            generate_code();  // Ohne Parameterangabe wird Standardwert "_" verwebdet
+        }
+
+        private void button2_function_Click(object sender, EventArgs e)
+        {
+            generate_code(separator: int_input.ToString());
+        }
+
+
         /* AREA of programm logic */
 
         private void validate_str_input(ref TextBox str_input, ref string str_var)
@@ -109,7 +114,7 @@ namespace SWD_Klausur_220505_Nikolaenko
             
         }
 
-        private void button1_generate_Click(object sender, EventArgs e)
+        private void generate_code(string separator = "_")
         {
             string[] string_arr = new string[int_input];
 
@@ -123,7 +128,7 @@ namespace SWD_Klausur_220505_Nikolaenko
 
             foreach (string segment in string_arr)
             {
-                label_message = label_message + segment + "_";
+                label_message = label_message + segment + separator;
             }
 
             label_message = label_message.Remove(label_message.Length - 1);

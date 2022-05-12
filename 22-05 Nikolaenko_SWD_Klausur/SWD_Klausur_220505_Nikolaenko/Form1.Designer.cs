@@ -50,7 +50,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(36, 104);
+            this.textBox2.Location = new System.Drawing.Point(161, 52);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 53);
             this.textBox2.TabIndex = 1;
@@ -60,7 +60,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(36, 156);
+            this.textBox3.Location = new System.Drawing.Point(280, 52);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 53);
             this.textBox3.TabIndex = 2;
@@ -70,7 +70,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(36, 207);
+            this.textBox4.Location = new System.Drawing.Point(414, 52);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 53);
             this.textBox4.TabIndex = 3;
@@ -80,9 +80,9 @@
             // button1_generate
             // 
             this.button1_generate.Enabled = false;
-            this.button1_generate.Location = new System.Drawing.Point(209, 75);
+            this.button1_generate.Location = new System.Drawing.Point(36, 204);
             this.button1_generate.Name = "button1_generate";
-            this.button1_generate.Size = new System.Drawing.Size(143, 45);
+            this.button1_generate.Size = new System.Drawing.Size(143, 51);
             this.button1_generate.TabIndex = 4;
             this.button1_generate.Text = "Code generieren";
             this.button1_generate.UseVisualStyleBackColor = true;
@@ -91,17 +91,18 @@
             // button2_function
             // 
             this.button2_function.Enabled = false;
-            this.button2_function.Location = new System.Drawing.Point(209, 177);
+            this.button2_function.Location = new System.Drawing.Point(237, 204);
             this.button2_function.Name = "button2_function";
             this.button2_function.Size = new System.Drawing.Size(143, 51);
             this.button2_function.TabIndex = 5;
             this.button2_function.Text = "Unterprogramm";
             this.button2_function.UseVisualStyleBackColor = true;
+            this.button2_function.Click += new System.EventHandler(this.button2_function_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(215, 140);
+            this.label1.Location = new System.Drawing.Point(33, 141);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 6;
@@ -112,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(570, 313);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2_function);
             this.Controls.Add(this.button1_generate);
