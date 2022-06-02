@@ -122,7 +122,15 @@ namespace SWD_Klausur_220505_Nikolaenko
 
             for (int index = 0; index < string_arr.Length; index++)
             {
-                string_arr[index] = str_input_1 + str_input_2 + str_input_3;
+                if (int.TryParse(separator, out int res) && res % 2 != 0)
+                {
+                    string_arr[index] = str_input_3 + str_input_2 + str_input_1;
+                }
+                else
+                {
+                    string_arr[index] = str_input_1 + str_input_2 + str_input_3;
+                }
+                
                 Console.WriteLine(string_arr[index]);
             }
 
